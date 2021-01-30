@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>송학건축사무소</title>
+
+    <meta name="author" content="Yoojin-Hwang">
+    <meta name="description" content="송학건축사무소">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0",
+          user-scalable = yes>
+    <link rel="icon" href="./images/6acfb65366aea4e21d0d961d02e6fecf.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./images/6acfb65366aea4e21d0d961d02e6fecf.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- http://ogp.me/ -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="송학건축사무소">
+  <meta property="og:title" content="송학건축사무소">
+  <meta property="og:description" content="당신의 생각, 이제는 내 눈 앞에 펼쳐집니다!">
+  <meta property="og:image" content="./images/6acfb65366aea4e21d0d961d02e6fecf.png">
+  <meta property="og:url" content="https://songhak-architect.djf">
+
+  <!-- https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:site" content="송학건축사무소">
+  <meta property="twitter:title" content="송학건축사무소">
+  <meta property="twitter:description" content="당신의 생각, 이제는 내 눈 앞에 펼쳐집니다!">
+  <meta property="twitter:image" content="./images/6acfb65366aea4e21d0d961d02e6fecf.png">
+  <meta property="twitter:url" content="https://songhak-architect.djf">
+
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/main.css">
+  
+
+</head>
+<body>
+
+<div class="box-area">
+   <header>
+    <div class="header-background">
+      <div class="wrapper">
+       
+         <div class="logo">
+            <a href="#">송학건축사무소</a>
+         </div>
+         <nav>
+            <a href="#">home</a> 
+            <a href="#">about</a> 
+            <a href="#">portfolio</a> 
+            <a href="#">services</a> 
+            <a href="#">contact</a>
+         </nav>
+       
+      </div>
+    </div> 
+   </header>
+   <div class="container">
+      <div class="arrow l" onclick="prev()">
+          <img src="./images/l.png" alt="l">
+      </div>
+      <div class="slide slide-1">
+           <div class="caption">
+               <h3>STARBUCKS 수원 권선점</h3>
+               <p>경기도 수원시 권선구 권선동 동수원로177번길 40</p>
+           </div>
+      </div>
+      <div class="slide slide-2">
+          <div class="caption">
+              <h3>STARBUCKS 인천 연수점</h3>
+              <p>인천광역시 연수구 8-17번지</p>
+          </div>
+     </div>
+     <div class="slide slide-3">
+          <div class="caption">
+              <h3>STARBUCKS 강남R점</h3>
+              <p>서울특별시 강남구 역삼동 강남대로 390</p>
+          </div>
+     </div>
+     <div class="slide slide-4">
+      <div class="caption">
+          <h3>STARBUCKS 양재역점</h3>
+          <p>서울특별시 서초구 양재1동 강남대로 202</p>
+      </div>
+ </div>
+     <div class="arrow r" onclick="next()">
+          <img src="./images/r.png" alt="r">
+      </div>
+  </div>
+
+      
+   
+   <div class="content-area">
+      <div class="wrapper">
+         <h2>ARCHITECTURE</h2>
+         <h3>송학건축의 서비스는 크게 도시주거설계, 도시개발사업, 공공건축사업입니다. 
+            도시주거와 개발 분양에서는 새로운 친환경 패러다임과 스마트 시티의 방향을 
+            제시하며 경기도 등 정부발주사업에 역량을 집중해 사업을 진행하고 있습니다.
+            특히 국방부(육해공군)와 설게협약을 체결한 유일한 기업으로써 국내설계사무소 중
+            독보적 사업실적을 보유하고 있습니다.
+         </h3>
+      </div>
+   </div>
+
+
+
+
+   <script>
+      let slide = document.querySelectorAll('.slide');
+      var current = 0;
+
+      function cls(){
+          for(let i = 0; i < slide.length; i++){
+                slide[i].style.display = 'none';
+          }
+      }
+
+      function next(){
+          cls();
+          if(current === slide.length-1) current = -1;
+          current++;
+
+          slide[current].style.display = 'block';
+          slide[current].style.opacity = 0.4;
+
+          var x = 0.4;
+          var intX = setInterval(function(){
+              x+=0.1;
+              slide[current].style.opacity = x;
+              if(x >= 1) {
+                  clearInterval(intX);
+                  x = 0.4;
+              }
+          }, 100);
+
+      }
+
+      function prev(){
+          cls();
+          if(current === 0) current = slide.length;
+          current--;
+
+          slide[current].style.display = 'block';
+          slide[current].style.opacity = 0.4;
+
+          var x = 0.4;
+          var intX = setInterval(function(){
+              x+=0.1;
+              slide[current].style.opacity = x;
+              if(x >= 1) {
+                  clearInterval(intX);
+                  x = 0.4;
+              }
+          }, 100);
+
+      }
+
+      function start(){
+          cls();
+          slide[current].style.display = 'block';
+      }
+      start();
+  </script>
+</div>
+
+
+   
+
+
+</body>
